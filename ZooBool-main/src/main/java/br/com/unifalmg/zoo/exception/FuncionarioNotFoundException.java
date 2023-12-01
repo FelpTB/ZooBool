@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 public class FuncionarioNotFoundException extends RuntimeException {
 
     public FuncionarioNotFoundException(String message) {
-        super(message);
+        super("Funcionário não encontrado");
     }
 
 }

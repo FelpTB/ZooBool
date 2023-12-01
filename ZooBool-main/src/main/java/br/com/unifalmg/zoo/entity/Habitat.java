@@ -33,6 +33,9 @@ public class Habitat implements Serializable {
     @JoinColumn(name= "AlaId")
     private Ala ala;
 
+    @ManyToOne
+    @JoinColumn(name = "IdTratador")
+    private Funcionario.Tratador tratador;
 
 
 

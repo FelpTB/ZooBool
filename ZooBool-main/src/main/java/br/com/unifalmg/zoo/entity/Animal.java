@@ -34,13 +34,22 @@ public class Animal implements Serializable {
 
     private Float Peso;
 
+    @ManyToOne
+    @JoinColumn (name = "IdHabitat")
+    private Habitat habitat;
+
+    @ManyToOne
+    @JoinColumn(name = "idVet")
+    private Funcionario.Veterinario veterinario;
     @Setter
     @Getter
-    @Entity
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor
     @Table(schema = "db", name = "Reptil")
+
+    @Entity
+    @PrimaryKeyJoinColumn(name = "idAnimal")
     public class Reptil extends Animal {
 
         @Id
@@ -54,11 +63,13 @@ public class Animal implements Serializable {
 
     @Setter
     @Getter
-    @Entity
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor
     @Table(schema = "db", name = "Mamifero")
+
+    @Entity
+    @PrimaryKeyJoinColumn(name = "idAnimal")
     public class Mamifero extends Animal {
 
         @Id
