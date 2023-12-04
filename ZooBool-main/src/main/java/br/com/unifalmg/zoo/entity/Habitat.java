@@ -27,10 +27,8 @@ public class Habitat implements Serializable {
     private Integer NEspecies;
 
     private String HorarioTrat;
-
-
     @ManyToOne
-    @JoinColumn(name= "AlaId")
+    @JoinColumn(name= "IdAla")
     private Ala ala;
 
 

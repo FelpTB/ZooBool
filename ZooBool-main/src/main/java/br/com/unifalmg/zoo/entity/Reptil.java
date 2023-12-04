@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Setter
 @Getter
@@ -12,16 +11,14 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(schema = "db2022108040", name = "Ala")
-public class Ala implements Serializable {
+@Table(schema = "db2022108040", name = "Reptil")
+public class Reptil implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdAla;
 
-    private String Tamanho;
+    private String TempCorporal;
 
-    @OneToMany(mappedBy = "Ala")
-    private List<Habitat> habitats;
+    private String TempoIncubacao;
 
 }

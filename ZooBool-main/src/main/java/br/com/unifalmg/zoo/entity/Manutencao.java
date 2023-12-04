@@ -24,7 +24,7 @@ public class Manutencao implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "Zelador")
-    private Funcionario.Zelador zelador;
+    private Zelador zelador;
 
     @ManyToOne
     @JoinColumn(name = "Ala")

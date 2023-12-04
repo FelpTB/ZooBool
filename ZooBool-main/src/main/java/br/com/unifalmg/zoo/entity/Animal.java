@@ -34,43 +34,6 @@ public class Animal implements Serializable {
 
     private Float Peso;
 
-    @Setter
-    @Getter
-    @Entity
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Table(schema = "db", name = "Reptil")
-    public class Reptil extends Animal {
-
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-        private String TempCorporal;
-
-        private String TempoIncubacao;
-
-    }
-
-    @Setter
-    @Getter
-    @Entity
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Table(schema = "db", name = "Mamifero")
-    public class Mamifero extends Animal {
-
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-        private String TempoAmam;
-
-        private String TempoGestacao;
-
-    }
-
-
 
 
 }

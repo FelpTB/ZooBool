@@ -18,40 +18,40 @@ import java.util.List;
 @AllArgsConstructor
 public class ZooController {
 
-//    private final AnimalService service;
-//
-//    @GetMapping("/")
-//    public String getHome() {
-//        return "home";
-//    }
-//
-//    @GetMapping("/users")
-//    public String user(Model model) {
-//        List<Animal> users = service.getAllUsers();
-//        model.addAttribute("users", users);
-//        return "users";
-//    }
-//
-//    @GetMapping("/user")
-//    public String user(Animal user) {
-//        return "newuser";
-//    }
-//
-//    @PostMapping("/user")
-//    public String newUser(@ModelAttribute("user") Animal user) {
-//        // TODO: Add the new user
-//        // service.add || service.save
-//        log.info("Entrou no cadastro de usuário");
-//        Animal addedUser = service.add(user);
-//        return "redirect:/user/" + addedUser.getId();
-//    }
-//
-//    @GetMapping("/user/{id}")
-//    public String showUser(@PathVariable("id") Integer id,
-//                           Model model) {
-//        Animal user = service.findById(id);
-//        model.addAttribute("user", user);
-//        return "showuser";
-//    }
+    private final AnimalService service;
+
+    @GetMapping("/")
+    public String getHome() {
+        return "home";
+    }
+
+    @GetMapping("/users")
+    public String user(Model model) {
+        List<Animal> users = service.getAllAnimals();
+        model.addAttribute("users", users);
+        return "users";
+    }
+
+    @GetMapping("/user")
+    public String user(Animal user) {
+        return "newuser";
+    }
+
+    @PostMapping("/user")
+    public String newUser(@ModelAttribute("user") Animal user) {
+        // TODO: Add the new user
+        // service.add || service.save
+        log.info("Entrou no cadastro de usuário");
+        Animal addedUser = service.add(user);
+        return "redirect:/user/" + addedUser.getIdAnimal();
+    }
+
+    @GetMapping("/user/{id}")
+    public String showUser(@PathVariable("id") Integer id,
+                           Model model) {
+        Animal user = service.findById(id);
+        model.addAttribute("user", user);
+        return "showuser";
+    }
 
 }
